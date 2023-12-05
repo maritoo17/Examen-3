@@ -53,15 +53,13 @@ public:
     }
 
     SymbolValue lookup(const std::string& name) {
-        auto it = symbolTable.find(name);
-        if (it != symbolTable.end()) {
-            return it->second;
-        } else {
-            std::cerr << "Error: Symbol '" << name << "' no encontrado en el Environment." << std::endl;
+        try {
+            return getSymbolValue(name);
+        } catch(const std::out_of_range& e) {
+            std::cerr << e.what() << std::endl;
             return SymbolValue();
         }
     }
-
 
 private:
     std::map<std::string, SymbolValue> symbolTable;
