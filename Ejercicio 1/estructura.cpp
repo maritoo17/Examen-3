@@ -35,6 +35,17 @@ public:
         }
     }
 
+    bool insert(const std::string& name, const SymbolValue& value) {
+        auto it = symbolTable.find(name);
+        if (it == symbolTable.end()) {
+            symbolTable[name] = value;
+            return true;
+        } else {
+            std::cerr << "Error: Symbol '" << name << "' ya existe en el Environment." << std::endl;
+            return false;
+        }
+    }
+
 private:
     std::map<std::string, SymbolValue> symbolTable;
 };
