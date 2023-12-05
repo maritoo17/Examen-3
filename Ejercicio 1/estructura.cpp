@@ -105,6 +105,12 @@ int main() {
     nombre.stringValue = new std::string("Jose María");
     env.insert("nombre", nombre);
 
+    auto valueZ = env.lookup("z");
+    if (valueZ.type == Environment::ValueType::INT) {
+        std::cout << "Valor de z: " << valueZ.intValue << std::endl;
+    }
+
+    auto valueNotFound = env.lookup("no_encontrado");
 
     return 0;
 }
