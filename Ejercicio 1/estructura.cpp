@@ -34,11 +34,11 @@ public:
     }
 
     SymbolValue getSymbolValue(const std::string& name) {
-        if (symbolTable.find(name) != symbolTable.end()) {
-            return symbolTable[name];
+        auto it = symbolTable.find(name);
+        if (it != symbolTable.end()) {
+            return it->second;
         } else {
-            std::cerr << "Error: Symbol '" << name << "' no encontrado en el Environment." << std::endl;
-            return SymbolValue();
+            throw std::out_of_range("Error: Symbol no encontrado en el Environment.");
         }
     }
 
