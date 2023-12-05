@@ -43,12 +43,11 @@ public:
     }
 
     bool insert(const std::string& name, const SymbolValue& value) {
-        auto it = symbolTable.find(name);
-        if (it == symbolTable.end()) {
-            symbolTable[name] = value;
+        try {
+            addSymbol(name, value);
             return true;
-        } else {
-            std::cerr << "Error: Symbol '" << name << "' ya existe en el Environment." << std::endl;
+        } catch(const std::invalid_argument& e) {
+            std::cerr << e.what() << std::endl;
             return false;
         }
     }
