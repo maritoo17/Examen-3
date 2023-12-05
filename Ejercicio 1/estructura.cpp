@@ -61,6 +61,20 @@ public:
         }
     }
 
+    bool removeSymbol(const std::string& name) {
+        auto it = symbolTable.find(name);
+        if (it != symbolTable.end()) {
+            symbolTable.erase(it);
+            return true;
+        } else {
+            return false; // El símbolo no existe
+        }
+    }
+
+    bool exists(const std::string& name) {
+        return symbolTable.find(name) != symbolTable.end();
+    }
+
 private:
     std::map<std::string, SymbolValue> symbolTable;
 };
