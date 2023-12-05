@@ -13,4 +13,4 @@ Parte 1: Preguntas de opción múltiple
 
 Parte 2: Problemas de codificación
 
-Ejercicio 1: 
+Ejercicio 1: el archivo EstructuraBasica.cpp lo he intercambiado por el estructura.cpp debido a que he tenido un problema con la ruta de los archivos y no me dejaba runer el código. Lo primero que he hecho en el ejercicio es declarar la clase Environment en el que pido que declaro unos símbolos con unos valores y otro símbolo con un nombre. Lo que consigo al final del ejercicio es que me imprima los símbolso con sus respectivos valores.
