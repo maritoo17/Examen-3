@@ -30,4 +30,10 @@ private;
     map<string, SymbolValue> symbolTable;
 };
 
+int main() {
+    Environment env;
 
+    env.addSymbol("x", 23);
+    env.addSymbol("y", 43.7);
+    env.addSymbol("nombre", "Juan Pablo");
+}
