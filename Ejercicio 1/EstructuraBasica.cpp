@@ -16,4 +16,13 @@ public:
     void addSymbol (const string name, SymbolValue& value) {
         symbolTable[name] = value;
     }
-};
+
+    SymbolValue getSymbolValue(const string& name) {
+        if (symbolTable.find(name) != symbolTable.end()) {
+            return symbolTable[name];
+        } else {
+            cerr << "Error: Symbol '" << name << "' no encontrado en el Environment." << endl;
+            return SymbolValue();
+        }
+    }
+
