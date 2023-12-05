@@ -91,7 +91,7 @@ int main() {
 
     Environment::SymbolValue nombre;
     nombre.type = Environment::ValueType::STRING;
-    nombre.stringValue = new std::string("Maria");
+    nombre.stringValue = new std::string("Jose María");
     env.insert("nombre", nombre);
 
 
