@@ -24,6 +24,12 @@ public:
     };
 
     void addSymbol(const std::string& name, const SymbolValue& value) {
+        auto it = symbolTable.find(name);
+        if (it != symbolTable.end()) {
+            if (it->second.type != value.type) {
+                throw std::invalid_argument("Error: Intentando insertar símbolo con tipo de valor diferente.");
+            }
+        }
         symbolTable[name] = value;
     }
 
