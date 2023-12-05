@@ -84,5 +84,16 @@ int main() {
         std::cout << "Nombre: " << *(valueName.stringValue) << std::endl;
     }
 
+    Environment::SymbolValue z;
+    z.type = Environment::ValueType::INT;
+    z.intValue = 50;
+    env.insert("z", z);
+
+    Environment::SymbolValue nombre;
+    nombre.type = Environment::ValueType::STRING;
+    nombre.stringValue = new std::string("Maria");
+    env.insert("nombre", nombre);
+
+
     return 0;
 }
