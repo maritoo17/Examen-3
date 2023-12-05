@@ -1,6 +1,7 @@
 #include <map>
 #include <string>
 #include <iostream>
+#include <stdexcept>
 
 class Environment {
 public:
